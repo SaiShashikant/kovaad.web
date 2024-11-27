@@ -1,77 +1,100 @@
-"use client"
+"use client";
+import React, {useState} from "react";
+import Image from "next/image";
+import {navItems} from "@/app/lib/AppConstants";
+import Link from "next/link";
 
-import React, {useState} from 'react';
-import Image from 'next/image'; // Assuming you're using Next.js
-
-// Placeholder for your logo - replace with actual path
-const logoPath = '/logo.png';
+const logoPath = "./logo.svg";
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
-        <nav className="bg-white shadow-md sticky top-0 z-50"> {/* Example styling */}
-            <div className="container mx-auto px-4 flex justify-between items-center h-16">
-                {/* Hamburger Menu */}
+        <nav className="bg-white shadow-md sticky top-0 z-50 py-3">
+            <div className="px-10 mx-auto flex justify-between items-center h-16">
                 <button
-                    className="md:hidden focus:outline-none"
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    className="focus:outline-none flex bg-blue-950 text-white rounded-full p-3 px-5"
+                    onClick={toggleMenu}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="currentColor" /* Example styling */
+                        stroke="currentColor"
                         className="w-6 h-6"
                     >
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth={2}
-                            d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                            d={
+                                menuOpen
+                                    ? "M6 18L18 6M6 6l12 12"
+                                    : "M4 6h16M4 12h16M4 18h16"
+                            }
                         />
                     </svg>
+                    {!menuOpen && <span className="mx-auto text-xl ml-2">Menu</span>}
                 </button>
 
-                {/* Logo */}
-                <div className="flex items-center">
+                <div className="flex items-center text-kovaad-blue text-2xl">
                     <Image
                         src={logoPath}
                         alt="Your Company Logo"
-                        width={40} // Adjust size as needed
-                        height={40}
+                        width={60}
+                        height={60}
                     />
-                    {/*Optionally add text next to the logo
-           <span className="ml-2 text-xl font-bold">Your Company</span>
-         */}
+                    <span className="ml-2 text-3xl font-bold text-kovaad-blue">Ko Vaad</span>
                 </div>
 
-
-                {/* Get Started Button - hidden on smaller screens initially */}
-                <div className="hidden md:block">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <div className="block">
+                    <button className="bg-kovaad-bg-hover-blue hover:bg-blue-700 rounded-xl text-white font-bold py-2 px-4">
                         Get Started
                     </button>
                 </div>
             </div>
-
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="md:hidden bg-white shadow-md">
-                    <ul className="py-2 px-4">
-                        {/* Example menu items */}
-                        <li><a href="#" className="block py-1 text-gray-800 hover:text-blue-500">Home</a></li>
-                        <li><a href="#" className="block py-1 text-gray-800 hover:text-blue-500">About</a></li>
-                        <li><a href="#" className="block py-1 text-gray-800 hover:text-blue-500">Services</a></li>
-                        {/* Include Get Started button in the mobile menu */}
-                        <li>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-2">
-                                Get Started
-                            </button>
+            <div
+                className={`fixed top-0 left-0 h-screen w-[33.33%] bg-kovaad-bg-hover-blue shadow-md transform transition-transform duration-500 ease-in-out ${
+                    menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0 pointer-events-none"
+                }`}
+            >
+                <button
+                    className="absolute right-0 mr-2 m-1 text-white z-10"
+                    onClick={toggleMenu}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d={"M6 18L18 6M6 6l12 12"}
+                        />
+                    </svg>
+                </button>
+                <ul
+                    className={`py-2 px-6 mx-auto text-white transition-all duration-500 ${
+                        menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    }`}
+                >
+                    {navItems.map((navItem: any, idx: number) => (
+                        <li key={`link-${idx}`} className="relative items-center flex py-3 font-wixFont hover:text-blue-500">
+                            <Link href={navItem.link}>
+                                <span className="!cursor-pointer text-3xl">{navItem.name}</span>
+                            </Link>
                         </li>
-                    </ul>
-                </div>
-            )}
+                    ))}
+                </ul>
+            </div>
         </nav>
     );
 };
