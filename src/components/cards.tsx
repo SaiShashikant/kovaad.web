@@ -9,7 +9,7 @@ export const Cards = () => {
             {gridItems.map((item) => (
                 <div key={item.id}>
                     {(item.id === 1 || item.id === 3) && (
-                        <div className="mx-auto h-screen md:flex items-center w-[90%] rounded-xl border-2 border-white m-2 bg-white relative overflow-hidden">
+                        <div className="mx-auto min-h-screen md:flex block items-center md:w-[90%] w-full rounded-xl border-2 border-white m-2 bg-white relative overflow-hidden">
                             <div className="absolute inset-0 w-full h-full z-0">
                                 <Image
                                     src={item.img}
@@ -71,8 +71,8 @@ export const Cards = () => {
 
                     )}
                     {item.id !== 1 && item.id !== 3 && item.id !== 9 && (
-                        <div className=" relative mx-auto h-screen md:flex justify-evenly items-center w-[90%] rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
-                            <div className="w-1/2 p-5">
+                        <div className=" relative mx-auto min-h-screen md:flex block justify-evenly items-center md:w-[90%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
+                            <div className="md:w-1/2 w-full p-5">
                                 {item.sno && (
                                     <div className="flex items-center mb-10">
 
@@ -107,7 +107,7 @@ export const Cards = () => {
                                 ))}</div>
                             </div>
 
-                            <div className="w-1/2 h-full p-5">
+                            <div className="md:w-1/2 w-full h-full p-5">
                                 <div className="w-full h-full relative rounded-xl overflow-hidden">
                                     <Image
                                         src={item.img}
@@ -134,16 +134,16 @@ export const Cards = () => {
                         </div>
                     )}
                     {item.id === 9 && (
-                        <div className=" relative mx-auto h-screen md:flex justify-evenly items-center w-[90%] rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
+                        <div className=" relative mx-auto min-h-screen md:flex block justify-evenly items-center md:w-[90%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
                             <div className="w-full p-5">
-                                <div className="text-6xl font-bold my-10">{item.title}</div>
+                                <div className="text-6xl font-bold md:my-10 my-5">{item.title}</div>
                                 <div>{item.description?.map((item, index: number) => (
                                     <div key={index} className="my-5">
                                         <div className="w-full h-[1px] bg-black my-3"></div>
                                         {typeof item === 'object' ? (
-                                            <div className="flex  my-16">
-                                                <div className="font-bold text-3xl ml-20 text-blue-500">{item.sno}</div>
-                                                <div className="text-4xl font-light ml-20">{item.desc}</div>
+                                            <div className="flex my-10 md:my-16">
+                                                <div className="font-bold text-3xl md:ml-20 ml-10 text-blue-500">{item.sno}</div>
+                                                <div className="text-4xl font-light md:ml-20 ml-10">{item.desc}</div>
                                             </div>
                                         ) : (
                                             <div>{item}</div>

@@ -15,9 +15,9 @@ export const Navbar = () => {
 
     return (
         <nav className="bg-white shadow-md sticky top-0 z-50 py-3">
-            <div className="px-10 mx-auto flex justify-between items-center h-16">
+            <div className="md:px-10 px-5 mx-auto flex justify-between items-center h-16">
                 <button
-                    className="focus:outline-none flex bg-blue-950 text-white rounded-full p-3 px-5"
+                    className="focus:outline-none flex bg-blue-950 text-white rounded-full md:p-3 md:px-5 p-1 px-2"
                     onClick={toggleMenu}
                 >
                     <svg
@@ -38,7 +38,7 @@ export const Navbar = () => {
                             }
                         />
                     </svg>
-                    {!menuOpen && <span className="mx-auto text-xl ml-2">Menu</span>}
+                    {!menuOpen && <span className="mx-auto hidden md:block text-xl ml-2">Menu</span>}
                 </button>
 
                 <div className="flex items-center text-kovaad-blue text-2xl">
@@ -47,18 +47,19 @@ export const Navbar = () => {
                         alt="Your Company Logo"
                         width={60}
                         height={60}
+                        className="md:w-full md:h-full w-[50%] h-[50%]"
                     />
-                    <span className="ml-2 text-3xl font-bold text-kovaad-blue">Ko Vaad</span>
+                    <span className="md:ml-2 ml-1 md:text-3xl text-xl font-bold text-kovaad-blue">Ko Vaad</span>
                 </div>
 
-                <div className="block">
+                <div className="block ">
                     <button className="bg-kovaad-bg-hover-blue hover:bg-blue-700 rounded-xl text-white font-bold py-2 px-4">
                         Get Started
                     </button>
                 </div>
             </div>
             <div
-                className={`fixed top-0 left-0 h-screen w-[33.33%] bg-kovaad-bg-hover-blue shadow-md transform transition-transform duration-500 ease-in-out ${
+                className={`fixed top-0 left-0 h-screen md:w-[33.33%] w-full bg-kovaad-bg-hover-blue shadow-md transform transition-transform duration-500 ease-in-out ${
                     menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0 pointer-events-none"
                 }`}
             >
