@@ -154,7 +154,7 @@ export const Cards = () => {
                         {item.id === 9 && (
                             <div className=" relative mx-auto  shadow-md min-h-screen md:flex block justify-evenly items-center md:w-[95%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
                                 <div className="w-full p-5">
-                                    <div className="text-6xl font-bold md:my-10 my-5">
+                                    <div className="md:text-6xl text-4xl                                     font-bold md:my-10 my-5">
                                         {item.title.map((title, index) => (
                                             <span key={index}>
                                             {title.plain}
@@ -169,8 +169,8 @@ export const Cards = () => {
                                             <div className="w-full h-[1px] bg-black my-3"></div>
                                             {typeof item === 'object' ? (
                                                 <div className="flex my-10 md:my-16">
-                                                    <div className="font-bold text-3xl md:ml-20 ml-10 text-kovaad-blue">{item.sno}</div>
-                                                    <div className="text-4xl font-light md:ml-20 ml-10">{item.desc}</div>
+                                                    <div className="font-bold md:text-3xl text-2xl items-center md:ml-20 ml-10 text-kovaad-blue">{item.sno}</div>
+                                                    <div className="md:text-4xl text-2xl font-light items-center md:ml-20 ml-10">{item.desc}</div>
                                                 </div>
                                             ) : (
                                                 <div>{item}</div>
