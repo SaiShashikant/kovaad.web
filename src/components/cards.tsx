@@ -71,52 +71,55 @@ export const Cards = () => {
 
                     )}
                     {item.id !== 1 && item.id !== 3 && item.id !== 9 && (
-                        <div className=" relative  shadow-md mx-auto min-h-screen md:flex block justify-evenly items-center md:w-[95%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
-                            <div className="md:w-1/2 w-full p-5">
-                                {item.sno && (
-                                    <div className="flex items-center mb-10">
+                        <div className=" relative  shadow-md mx-auto min-h-screen md:w-[95%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
+                            <div className="md:flex block justify-evenly items-center">
+                                <div className="md:w-1/2 w-full p-5">
+                                    {item.sno && (
+                                        <div className="flex items-center">
 
-                                        <div className={`text-xl text-blue-500 font-bold`}>
-                                            {item.sno}
+                                            <div className={`text-xl text-blue-500 font-bold`}>
+                                                {item.sno}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
-                                <div className="text-3xl font-bold my-10">{item.title}</div>
+                                    )}
+                                    <div className="text-3xl font-bold my-10">{item.title}</div>
 
-                                {item.id === 2 && item.subtitle && (
-                                    <div className="flex items-center mb-5">
-                                        <div className="w-1/4 h-[2px] bg-black mr-3"></div>
+                                    {item.id === 2 && item.subtitle && (
+                                        <div className="flex items-center mb-5">
+                                            <div className="w-1/4 h-[2px] bg-black mr-3"></div>
 
-                                        <div className={`text-3xl mb-10`}>
-                                            {item.subtitle}
+                                            <div className={`text-3xl mb-10`}>
+                                                {item.subtitle}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
 
-                                <div>{item.description?.map((item, index: number) => (
-                                    <div key={index} className="my-5">
-                                        {typeof item === 'object' ? (
-                                            <>
-                                                <div className="font-semibold text-blue-500 ">{item.sno}</div>
-                                                <div>{item.desc}</div>
-                                            </>
-                                        ) : (
-                                            <div>{item}</div>
-                                        )}
-                                    </div>
-                                ))}</div>
-                            </div>
-
-                            <div className="md:w-1/2 w-full h-full p-5">
-                                <div className="w-full h-full relative rounded-xl overflow-hidden">
-                                    <Image
-                                        src={item.img}
-                                        alt={item.spareImg}
-                                        width={500}
-                                        height={500}
-                                        className={`${item.imgClassName} rounded-2xl `}
-                                    />
+                                    <div>{item.description?.map((item, index: number) => (
+                                        <div key={index} className="my-5">
+                                            {typeof item === 'object' ? (
+                                                <>
+                                                    <div className="font-semibold text-blue-500 ">{item.sno}</div>
+                                                    <div>{item.desc}</div>
+                                                </>
+                                            ) : (
+                                                <div>{item}</div>
+                                            )}
+                                        </div>
+                                    ))}</div>
                                 </div>
+
+                                <div className="md:w-1/2 w-full h-full p-5  md:mb-20">
+                                    <div className="w-full h-full relative rounded-xl overflow-hidden justify-center flex">
+                                        <Image
+                                            src={item.img}
+                                            alt={item.spareImg}
+                                            width={500}
+                                            height={500}
+                                            className={`${item.imgClassName} rounded-2xl`}
+                                        />
+                                    </div>
+                                </div>
+
                             </div>
                             {item.buttonLink && (
                                 <button
@@ -125,12 +128,11 @@ export const Cards = () => {
                                             window.location.href = item.buttonLink;
                                         }
                                     }}
-                                    className={`${item.buttonLink ? "absolute bottom-12 left-12" : "hidden"} w-32 h-32 hover:bg-blue-700 text-black border border-black font-bold rounded-full flex items-center justify-center shadow-lg`}
+                                    className={`${item.buttonLink ? "block" : "hidden"} md:w-28 md:h-28 p-5 w-20 h-20 hover:bg-blue-700 text-black border  border-black font-bold rounded-full flex items-center justify-center shadow-lg`}
                                 >
                                     {item.buttonName}
                                 </button>
                             )}
-
                         </div>
                     )}
                     {item.id === 9 && (
