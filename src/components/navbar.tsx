@@ -16,7 +16,7 @@ export const Navbar = () => {
     return (
         <nav className="bg-white shadow-md sticky top-0 z-50 py-3">
             <div className="md:px-10 px-5 mx-auto flex justify-between items-center h-32">
-                <button className="focus:outline-none flex bg-blue-950 text-white rounded-full md:p-5 md:px-10 p-1 px-2"
+                <button className="focus:outline-none flex bg-blue-950 hover:bg-blue-700  text-white rounded-xl md:p-5 md:px-10 p-1 px-2"
                     onClick={toggleMenu}
                 >
                     <svg
@@ -60,8 +60,8 @@ export const Navbar = () => {
                 </div>
             </div>
             <div
-                className={`fixed top-0 left-0 h-screen md:w-[33.33%] w-full bg-kovaad-bg-hover-blue shadow-md transform transition-transform duration-500 ease-in-out ${
-                    menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0 pointer-events-none"
+                className={`fixed top-0 left-0 h-screen md:w-[33.33%] w-full bg-kovaad-bg-hover-blue shadow-md transform transition-all duration-500 ease-in-out ${
+                    menuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "-translate-x-full opacity-0 pointer-events-none"
                 }`}
             >
                 <button

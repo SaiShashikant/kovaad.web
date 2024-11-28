@@ -54,11 +54,17 @@ export const Cards = () => {
                                 <button
                                     onClick={() => {
                                         if (item.buttonLink) {
-                                            window.location.href = item.buttonLink;
+                                            if (item.buttonLink.startsWith('#')) {
+                                                const targetElement = document.querySelector(item.buttonLink);
+                                                targetElement?.scrollIntoView({behavior: 'smooth'});
+                                            } else {
+                                                window.location.href = item.buttonLink;
+                                            }
                                         }
                                     }}
-                                    className={`${item.buttonLink ? "absolute bottom-16 left-16" : "hidden"} w-20 h-20 hover:bg-blue-700 text-yellow-500 border border-yellow-500 font-bold rounded-full flex items-center justify-center shadow-lg`}
+                                    className={`${item.buttonLink ? "absolute bottom-16 left-16" : "hidden"} w-20 h-20 hover:bg-kovaad-font-gray text-yellow-500 border border-yellow-500 font-bold rounded-full flex items-center justify-center shadow-lg`}
                                 >
+
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -144,7 +150,7 @@ export const Cards = () => {
                                                 window.location.href = item.buttonLink;
                                             }
                                         }}
-                                        className={`${item.buttonLink ? "block" : "hidden"} md:w-28 md:h-28 p-5 w-20 h-20 hover:bg-blue-700 text-black border  border-black font-bold rounded-full flex items-center justify-center shadow-lg`}
+                                        className={`${item.buttonLink ? "block" : "hidden"} md:w-28 md:h-28 p-5 w-20 h-20 hover:text-blue-500 text-black border  border-black font-bold rounded-full flex items-center justify-center shadow-lg`}
                                     >
                                         {item.buttonName}
                                     </button>
