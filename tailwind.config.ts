@@ -23,6 +23,7 @@ module.exports = {
                 'kovaad-bg-blue': "#f6f9ff",
                 'kovaad-bg-hover-blue': "#0D2E66",
                 'kovaad-bg-light-blue': "rgba(179,198,239,0.4)",
+                'c': "rgba(235,238,250,0.4)",
             },
             fontSize: {
                 'font-size-sm': "12px",

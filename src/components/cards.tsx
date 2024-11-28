@@ -9,7 +9,7 @@ export const Cards = () => {
             {gridItems.map((item) => (
                 <div key={item.id}>
                     {(item.id === 1 || item.id === 3) && (
-                        <div className="mx-auto min-h-screen md:flex block items-center md:w-[90%] w-full rounded-xl border-2 border-white m-2 bg-white relative overflow-hidden">
+                        <div className="mx-auto shadow-md min-h-screen md:flex block items-center md:w-[95%] w-full rounded-xl border-2 border-white m-2 bg-white relative overflow-hidden">
                             <div className="absolute inset-0 w-full h-full z-0">
                                 <Image
                                     src={item.img}
@@ -71,7 +71,7 @@ export const Cards = () => {
 
                     )}
                     {item.id !== 1 && item.id !== 3 && item.id !== 9 && (
-                        <div className=" relative mx-auto min-h-screen md:flex block justify-evenly items-center md:w-[90%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
+                        <div className=" relative  shadow-md mx-auto min-h-screen md:flex block justify-evenly items-center md:w-[95%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
                             <div className="md:w-1/2 w-full p-5">
                                 {item.sno && (
                                     <div className="flex items-center mb-10">
@@ -112,9 +112,9 @@ export const Cards = () => {
                                     <Image
                                         src={item.img}
                                         alt={item.spareImg}
-                                        width={1000}
-                                        height={1000}
-                                        className={`${item.imgClassName} rounded-xl `}
+                                        width={500}
+                                        height={500}
+                                        className={`${item.imgClassName} rounded-2xl `}
                                     />
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ export const Cards = () => {
                         </div>
                     )}
                     {item.id === 9 && (
-                        <div className=" relative mx-auto min-h-screen md:flex block justify-evenly items-center md:w-[90%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
+                        <div className=" relative mx-auto  shadow-md min-h-screen md:flex block justify-evenly items-center md:w-[95%] w-full rounded-xl border-2 border-white m-5 p-5 bg-white" id="home">
                             <div className="w-full p-5">
                                 <div className="text-6xl font-bold md:my-10 my-5">{item.title}</div>
                                 <div>{item.description?.map((item, index: number) => (

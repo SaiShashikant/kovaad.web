@@ -15,9 +15,8 @@ export const Navbar = () => {
 
     return (
         <nav className="bg-white shadow-md sticky top-0 z-50 py-3">
-            <div className="md:px-10 px-5 mx-auto flex justify-between items-center h-16">
-                <button
-                    className="focus:outline-none flex bg-blue-950 text-white rounded-full md:p-3 md:px-5 p-1 px-2"
+            <div className="md:px-10 px-5 mx-auto flex justify-between items-center h-32">
+                <button className="focus:outline-none flex bg-blue-950 text-white rounded-full md:p-5 md:px-10 p-1 px-2"
                     onClick={toggleMenu}
                 >
                     <svg
@@ -40,20 +39,22 @@ export const Navbar = () => {
                     </svg>
                     {!menuOpen && <span className="mx-auto hidden md:block text-xl ml-2">Menu</span>}
                 </button>
-
-                <div className="flex items-center text-kovaad-blue text-2xl">
-                    <Image
-                        src={logoPath}
-                        alt="Your Company Logo"
-                        width={60}
-                        height={60}
-                        className="md:w-full md:h-full w-[50%] h-[50%]"
-                    />
-                    <span className="md:ml-2 ml-1 md:text-3xl text-xl font-bold text-kovaad-blue">Ko Vaad</span>
+                <div>
+                    <div className="flex items-center text-kovaad-blue text-2xl h-24">
+                        <Image
+                            src={logoPath}
+                            alt="Your Company Logo"
+                            width={60}
+                            height={60}
+                            className="md:w-full md:h-full w-[50%] h-[50%]"
+                        />
+                        <span className="md:ml-2 ml-1 md:text-5xl text-2xl font-bold whitespace-nowrap text-kovaad-blue">Ko Vaad</span>
+                    </div>
+                    <div className="text-kovaad-blue text-xl pl-6 ">Expanding Communication</div>
                 </div>
 
                 <div className="block ">
-                    <button className="bg-kovaad-bg-hover-blue hover:bg-blue-700 rounded-xl text-white font-bold py-2 px-4">
+                    <button className="bg-kovaad-bg-hover-blue hover:bg-blue-700 rounded-xl text-white font-bold py-5 px-10">
                         Get Started
                     </button>
                 </div>
