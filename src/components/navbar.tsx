@@ -50,7 +50,7 @@ export const Navbar = () => {
                         />
                         <span className="md:ml-2 ml-1 md:text-5xl text-2xl font-bold whitespace-nowrap text-kovaad-blue">Ko Vaad</span>
                     </div>
-                    <div className="text-kovaad-blue text-xl pl-6 ">Expanding Communication</div>
+                    <div className="text-kovaad-blue text-xl pl-5 ">Expanding Communication</div>
                 </div>
 
                 <div className="block ">
