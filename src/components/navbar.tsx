@@ -88,7 +88,7 @@ export const Navbar = () => {
                         menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                     }`}
                 >
-                    {navItems.map((navItem: any, idx: number) => (
+                    {navItems.map((navItem, idx: number) => (
                         <li key={`link-${idx}`} className="relative items-center flex py-3 font-wixFont hover:text-blue-500">
                             <Link href={navItem.link}>
                                 <span className="!cursor-pointer text-3xl">{navItem.name}</span>
