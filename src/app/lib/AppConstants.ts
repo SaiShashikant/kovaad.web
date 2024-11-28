@@ -15,7 +15,7 @@ export const gridItems = [
         imgClassName: "w-full h-full object-cover",
         className: " w-[90%]",
         titleClassName: "justify-center",
-        img: "/group.jpg",
+        img: "@/public/group.jpg",
         spareImg: "",
         buttonLink: "#home"
     },
@@ -29,7 +29,7 @@ export const gridItems = [
         className: " w-[90%]",
         imgClassName: "w-full h-full object-cover",
         titleClassName: "justify-center",
-        img: "/successful_communication.png",
+        img: "@/public/successful_communication.png",
         spareImg: "",
         buttonLink: "#home",
         buttonName: "Learn More",
@@ -40,7 +40,7 @@ export const gridItems = [
         title: "Our Focus Areas",
         description: ["Social Communication is targeted through each of these: "],
         className: " w-[90%]",
-        img: "/macbook.jpeg",
+        img: "@/public/macbook.jpeg",
         spareImg: "",
         buttonLink: ""
     },
@@ -53,7 +53,7 @@ export const gridItems = [
         className: " w-[90%]",
         imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
         titleClassName: "justify-center",
-        img: "/phone.jpg",
+        img: "@/public/phone.jpg",
         spareImg: "",
         buttonLink: ""
     },
@@ -68,7 +68,7 @@ export const gridItems = [
         className: " w-[90%]",
         imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
         titleClassName: "justify-center",
-        img: "/girl_thumps_up.jpg",
+        img: "@/public/girl_thumps_up.jpg",
         spareImg: "",
         buttonLink: ""
     },
@@ -80,7 +80,7 @@ export const gridItems = [
         className: " w-[90%]",
         imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
         titleClassName: "justify-center",
-        img: "/conversation_structure_plain.png",
+        img: "@/public/conversation_structure_plain.png",
         spareImg: "",
         buttonLink: ""
     },
@@ -92,7 +92,7 @@ export const gridItems = [
         className: " w-[90%]",
         imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
         titleClassName: "justify-center",
-        img: "/sai_tennis_academy.png",
+        img: "@/public/sai_tennis_academy.png",
         spareImg: "",
         buttonLink: ""
     },
@@ -104,7 +104,7 @@ export const gridItems = [
         className: " w-[90%]",
         imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
         titleClassName: "justify-center",
-        img: "/kids-birthday-party.webp",
+        img: "@/public/kids-birthday-party.webp",
         spareImg: "",
         buttonLink: ""
     },

@@ -4,7 +4,7 @@ import Image from "next/legacy/image";
 import {navItems} from "@/app/lib/AppConstants";
 import Link from "next/link";
 
-const logoPath = "/logo.svg";
+const logoPath = "@/public/logo.svg";
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
