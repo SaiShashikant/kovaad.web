@@ -3,7 +3,7 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import { footer } from '@/app/lib/AppConstants';
 
 const Footer: React.FC = () => {
