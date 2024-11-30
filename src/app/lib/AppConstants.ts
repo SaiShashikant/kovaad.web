@@ -139,3 +139,16 @@ export const footer = {
         {link: "+1 234 567 890", title: "+1 234 567 890"}],
 }
 
+export const AppConstants ={
+    Links:{
+        Home:"/" as string,
+        AboutUs : "/aboutus" as string,
+        Pricing: "/pricing" as string,
+        Reports: "/reports" as string,
+        Blogs: "/blogs" as string,
+        ContactUs: "/contactus" as string,
+        Subscription: "/subscription" as string,
+        Billing: "/billing" as string,
+        Support: "/support" as string,
+    }
+}

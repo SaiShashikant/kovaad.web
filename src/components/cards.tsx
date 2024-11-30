@@ -130,7 +130,7 @@ export const Cards = () => {
                                         ))}</div>
                                     </div>
 
-                                    <div className="md:w-1/2 w-full h-full p-5  md:mb-20">
+                                    <div className={`md:w-1/2 w-full h-full p-5  ${item.buttonLink ? "md:mb-20" : ""}`}>
                                         <div className="w-full h-full relative rounded-xl overflow-hidden justify-center flex">
                                             <Image
                                                 src={item.img}
