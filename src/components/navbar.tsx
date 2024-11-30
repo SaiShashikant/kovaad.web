@@ -22,7 +22,7 @@ export const Navbar = () => {
         if (typeof previous === "number") {
             const direction = current - previous;
 
-            if (scrollYProgress.get() < 0.0001) {
+            if (scrollYProgress.get() < 0.01) {
                 setHeight("h-32");
             } else if (direction < 0) {
                 setHeight("h-32");
