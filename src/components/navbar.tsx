@@ -22,7 +22,7 @@ export const Navbar = () => {
         if (typeof previous === "number") {
             const direction = current - previous;
 
-            if (scrollYProgress.get() < 0.01) {
+            if (scrollYProgress.get() < 0.001 || direction < 0) {
                 setHeight("h-32");
             } else if (direction < 0) {
                 setHeight("h-32");
@@ -88,7 +88,7 @@ export const Navbar = () => {
                         />
                         <span className="md:ml-2 ml-1 md:text-5xl text-2xl font-bold whitespace-nowrap text-kovaad-blue">Ko Vaad</span>
                     </div>
-                    <div className={`text-kovaad-blue ${height === "h-16" ? "hidden" : "md:block hidden"} text-xl pl-5`}>Expanding Communication</div>
+                    <div className={`text-kovaad-blue ${height === "h-16" ? "hidden" : "md:block hidden"} transform transition-all duration-300 ease-in-out text-xl pl-5`}>Expanding Communication</div>
                 </div>
                 <div className="block md:text-lg text-xs">
                     <button className="bg-kovaad-bg-hover-blue hover:bg-blue-700 rounded-xl text-white font-bold py-2 px-3 md:py-5 md:px-10">
