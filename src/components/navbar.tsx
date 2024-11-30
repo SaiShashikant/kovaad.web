@@ -11,7 +11,7 @@ const logoPath = "/logo.svg";
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isSettingsDisplayed, setIsSettingsDisplayed] = useState(false);
-    const menuRef = useRef(null); // Create a ref to track the menu element
+    const menuRef = useRef<HTMLDivElement | null>(null); // Create a ref to track the menu element
     const {scrollYProgress} = useScroll();
     const [height, setHeight] = useState("h-32");
 
@@ -39,7 +39,7 @@ export const Navbar = () => {
     // Handle clicks outside the menu
     useEffect(() => {
         const handleClickOutside = (event: { target: any; }) => {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setMenuOpen(false); // Close the menu if clicked outside
             }
         };
