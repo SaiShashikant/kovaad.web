@@ -4,8 +4,7 @@ import Image from "next/legacy/image";
 import {navItems} from "@/app/lib/AppConstants";
 import Link from "next/link";
 import Settings from "@/components/Settings";
-import {useMotionValue, useMotionValueEvent, useScroll} from "framer-motion";
-import {animate} from "motion";
+import {useMotionValueEvent, useScroll} from "framer-motion";
 
 const logoPath = "/logo.svg";
 
@@ -16,28 +15,23 @@ export const Navbar = () => {
     const {scrollYProgress} = useScroll();
     const [height, setHeight] = useState("h-32");
 
-    const heightMotionValue = useMotionValue("h-32");
-    useEffect(() => {
-        heightMotionValue.onChange((latestHeight) => {
-            setHeight(latestHeight);
-        });
-    }, [heightMotionValue]);
-
-
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        if (typeof latest === 'number' && typeof scrollYProgress.getPrevious() === 'number') {
+        const current = latest; //Renamed for clarity
+        const previous = scrollYProgress.getPrevious();
 
-            let direction = latest - scrollYProgress.getPrevious()!;
-            const targetHeight = scrollYProgress.get() < 0.0001 || direction < 0 ? 32 : 16; // Target height in pixels
+        if (typeof previous === "number") {
+            const direction = current - previous;
 
-            // @ts-ignore
-            animate(heightMotionValue, targetHeight as number, {
-                duration: 0.3,
-                type: "spring"
-            }); // Type cast for safety
-
+            if (scrollYProgress.get() < 0.0001) {
+                setHeight("h-32");
+            } else if (direction < 0) {
+                setHeight("h-32");
+            } else {
+                setHeight("h-16");
+            }
         }
     });
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
