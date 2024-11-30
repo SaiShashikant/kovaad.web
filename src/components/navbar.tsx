@@ -4,7 +4,8 @@ import Image from "next/legacy/image";
 import {navItems} from "@/app/lib/AppConstants";
 import Link from "next/link";
 import Settings from "@/components/Settings";
-import {useMotionValueEvent, useScroll} from "framer-motion";
+import {useMotionValue, useMotionValueEvent, useScroll} from "framer-motion";
+import {animate} from "motion";
 
 const logoPath = "/logo.svg";
 
@@ -15,23 +16,28 @@ export const Navbar = () => {
     const {scrollYProgress} = useScroll();
     const [height, setHeight] = useState("h-32");
 
-    useMotionValueEvent(scrollYProgress, "change", (current) => {
-        // Check if current is not undefined and is a number
-        if (typeof current === "number") {
-            let direction = current! - scrollYProgress.getPrevious()!;
+    const heightMotionValue = useMotionValue("h-32");
+    useEffect(() => {
+        heightMotionValue.onChange((latestHeight) => {
+            setHeight(latestHeight);
+        });
+    }, [heightMotionValue]);
 
-            if (scrollYProgress.get() < 0.01) {
-                setHeight("h-32")
-            } else {
-                if (direction < 0) {
-                    setHeight("h-32")
-                } else {
-                    setHeight("h-16");
-                }
-            }
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        if (typeof latest === 'number' && typeof scrollYProgress.getPrevious() === 'number') {
+
+            let direction = latest - scrollYProgress.getPrevious()!;
+            const targetHeight = scrollYProgress.get() < 0.0001 || direction < 0 ? 32 : 16; // Target height in pixels
+
+            // @ts-ignore
+            animate(heightMotionValue, targetHeight as number, {
+                duration: 0.3,
+                type: "spring"
+            }); // Type cast for safety
+
         }
     });
-
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
@@ -52,7 +58,7 @@ export const Navbar = () => {
 
     return (
         <nav className="bg-white shadow-md sticky top-0 z-50 py-3">
-            <div className={`md:px-10 px-5 mx-auto flex justify-between rounded-md items-center ${height} transform transition-all duration-500 ease-in-out`}>
+            <div className={`md:px-10 px-5 mx-auto flex justify-between rounded-md items-center ${height} transform transition-all duration-300 ease-in-out`}>
                 <button
                     className="focus:outline-none flex bg-blue-950 hover:bg-blue-700 text-white rounded-xl md:p-5 md:px-10 p-1 px-2"
                     onClick={toggleMenu}
