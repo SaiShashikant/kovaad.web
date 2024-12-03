@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/legacy/image";
-import {gridItems} from "@/app/lib/AppConstants";
+import {gridItems, KovaadLink} from "@/app/lib/AppConstants";
 
 
 export const Cards = () => {
@@ -95,7 +95,7 @@ export const Cards = () => {
                                                 </div>
                                             </div>
                                         )}
-                                        <div className="text-3xl font-bold my-10">
+                                        <div className="text-3xl font-bold my-10 mt-5">
                                             {item.title.map((title, index) => (
                                                 <span key={index}>
                                                     {title.plain}
@@ -107,10 +107,10 @@ export const Cards = () => {
                                         </div>
 
                                         {item.id === 2 && item.subtitle && (
-                                            <div className="flex items-center mb-5">
+                                            <div className="flex items-center mb-3">
                                                 <div className="w-1/4 h-[2px] bg-black mr-3"></div>
 
-                                                <div className={`text-3xl mb-10`}>
+                                                <div className={`text-3xl mb-5`}>
                                                     {item.subtitle}
                                                 </div>
                                             </div>
@@ -130,13 +130,13 @@ export const Cards = () => {
                                         ))}</div>
                                     </div>
 
-                                    <div className={`md:w-1/2 w-full h-full p-5  ${item.buttonLink ? "md:mb-20" : ""}`}>
+                                    <div className={`md:w-1/2 w-full h-full p-10`}>
                                         <div className="w-full h-full relative rounded-xl overflow-hidden justify-center flex">
                                             <Image
                                                 src={item.img}
                                                 alt={item.spareImg}
-                                                width={500}
-                                                height={500}
+                                                width={600}
+                                                height={550}
                                                 className={`${item.imgClassName} rounded-2xl`}
                                             />
                                         </div>
@@ -147,14 +147,18 @@ export const Cards = () => {
                                     <button
                                         onClick={() => {
                                             if (item.buttonLink) {
-                                                window.location.href = item.buttonLink;
+                                                window.open(KovaadLink, '_blank', 'noopener,noreferrer');
                                             }
                                         }}
-                                        className={`${item.buttonLink ? "block" : "hidden"} md:w-28 md:h-28 p-5 w-20 h-20 hover:text-blue-500 text-black border  border-black font-bold rounded-full flex items-center justify-center shadow-lg`}
+                                        className={`${
+                                            item.buttonLink ? 'block' : 'hidden'
+                                        } md:w-28 md:h-28 p-5 w-20 h-20 hover:text-blue-500 text-black border border-black font-bold rounded-full flex items-center justify-center shadow-lg`}
                                     >
                                         {item.buttonName}
                                     </button>
                                 )}
+
+
                             </div>
                         )}
                         {item.id === 9 && (

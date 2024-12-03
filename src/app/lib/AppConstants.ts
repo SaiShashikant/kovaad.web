@@ -31,7 +31,7 @@ export const gridItems = [
         titleClassName: "justify-center",
         img: "/successful_communication.png",
         spareImg: "",
-        buttonLink: "#home",
+        buttonLink: "beta.kovaad.ai",
         buttonName: "Learn More",
     },
     {
@@ -77,8 +77,8 @@ export const gridItems = [
         sno: "03",
         title: [{plain:"Conversation Structure",highlighted: ""}],
         description: ["Much like everything else in life, there are explicit rules to having conversations, starting from how to join in the existing conversation; how much I speak; picking up the unstated topic in the conversation; connecting my ideas in response to the conversation partner; how long to continue on the topic and exiting or closing the topic. Individuals facing concerns with social communication often need guidance and practice in each of these rules before they can smoothly use them in everyday conversations."],
-        className: " w-[90%]",
-        imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
+        className: " w-[95%]",
+        imgClassName: "w-ful h-3/4 object-fit mx-auto",
         titleClassName: "justify-center",
         img: "/conversation_structure_plain.png",
         spareImg: "",
@@ -89,8 +89,8 @@ export const gridItems = [
         sno: "04",
         title:[{plain:"Building Conversation Content",highlighted: ""}] ,
         description: ["Even though most kids/ individuals feel excited to share about a topic of their interest, they lack the ideas of what to share, so they end up either only asking questions or listing facts about their topic, without assimilating what the other has said. They may also sound repetitive or just ‘boring’. To be able to talk effectively, one needs to share more experiences, and opinions and show interest in knowing the about the other."],
-        className: " w-[90%]",
-        imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
+        className: " w-[95%]",
+        imgClassName: "w-full h-3/4 object-fill mx-auto",
         titleClassName: "justify-center",
         img: "/sai_tennis_academy.png",
         spareImg: "",
@@ -102,7 +102,7 @@ export const gridItems = [
         title: [{plain:"Situation Specific Conversations",highlighted: ""}],
         description: ["Practicing everyday conversation skills relevant to specific situations like buying a ticket; going to a barber shop; ordering food in a restaurant etc. is also a need for most individuals who struggle with social communication, to be able to live independently and improve their quality of life."],
         className: " w-[90%]",
-        imgClassName: "w-3/4 h-3/4 object-cover mx-auto",
+        imgClassName: "w-3/4 h-3/4 object-fill mx-auto",
         titleClassName: "justify-center",
         img: "/kids-birthday-party.webp",
         spareImg: "",
@@ -152,3 +152,5 @@ export const AppConstants ={
         Support: "/support" as string,
     }
 }
+
+export const KovaadLink="https://beta.kovaad.ai"

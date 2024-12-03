@@ -2,8 +2,8 @@ import type {Metadata} from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const wixSans = localFont({
-    src: "../../public/fonts/WixMadeforText-Medium.ttf",
+const helvatica = localFont({
+    src: "../../public/fonts/Helvetica.ttf",
     variable: "--font-wix-sans",
     weight: "100 900",
 });
@@ -19,7 +19,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
     return (
         <html lang="en">
         <body
-            className={`${wixSans.variable}  antialiased`}
+            className={`${helvatica.variable}  antialiased`}
         >
         {children}
         </body>
